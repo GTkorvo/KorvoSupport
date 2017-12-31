@@ -355,7 +355,6 @@ while(my $project = shift(@projects)) {
 	my $eval_args = eval($args); warn $@ if $@;
 	normal_output("    ==> cmake $eval_args $src_dir\n");
 	$config_command = "cmake $eval_args $src_dir 1>>$results 2>&1";
-	CreateCTestConfig($project, $src_dir);
     } else {
         my $args = '"';
 	if (defined($config_args{$repository})) {
