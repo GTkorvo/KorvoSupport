@@ -753,7 +753,7 @@ sub update_file {
       my $ua = LWP::UserAgent->new();
       $ua->env_proxy();
 
-      $response = $ua->get("https://github.com/GTkorvo/KorvoSupport/blob/master/$base");
+      $response = $ua->get("https://raw.githubusercontent.com/GTkorvo/KorvoSupport/master/$base");
      
       if ($response->is_success) {
 	open(FILE, ">/tmp/$base");
@@ -764,7 +764,7 @@ sub update_file {
 	return;
       }
     } else {
-      my $ret = system("cd /tmp ; rm -f $base ; wget -q https://github.com/GTkorvo/KorvoSupport/blob/master/$base");
+      my $ret = system("cd /tmp ; rm -f $base ; wget -q https://raw.githubusercontent.com/GTkorvo/KorvoSupport/master/$base");
       my $exit_value = $ret >> 8;
       if ($exit_value != 0) {
 	die("This script requires either the perl module LWP::UserAgent, or the command 'wget' to be installed\n\tThe former was not found and the latter failed.");
