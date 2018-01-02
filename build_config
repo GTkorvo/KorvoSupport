@@ -19,7 +19,7 @@ cercs_env	korvogithub
 atl		korvogithub
 ffs		korvogithub
 enet		korvogithub
-nnti		korvogithub
+%nnti		korvogithub
 evpath		korvogithub
 
 %REPOSITORIES
